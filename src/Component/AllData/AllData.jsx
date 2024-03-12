@@ -4,7 +4,7 @@ import BlogCard from "../BlogCard/BlogCard";
 
 
 
-const AllData = () => {
+const AllData = ({handleClickAddCart}) => {
 
 
   const [blogs, setBlogs]=useState([]);
@@ -24,7 +24,7 @@ const AllData = () => {
 
     <div className="md:w-3/4">
       {
-        blogs.map((blog,index)=><BlogCard key={index} blog={blog}/>)
+        blogs.map((blog,index)=><BlogCard key={index} blog={blog} handleClickAddCart={handleClickAddCart}/>)
       }
     </div>
     
