@@ -1,0 +1,42 @@
+[
+  {
+    "id": 1,
+    "cover": "https://i.ibb.co/qpMW07R/24997762-7035485.jpg",
+    "title": "the art of coding",
+    "author": "john doe",
+    "author_img": "https://i.pinimg.com/474x/98/51/1e/98511ee98a1930b8938e42caf0904d2d.jpg",
+    "posted_date": "2024-03-12",
+    "reading_time": 10,
+    "hashtags": ["coding", "technology"]
+  },
+  {
+    "id": 2,
+    "cover": "https://i.ibb.co/FJXVBSm/6643691.jpg",
+    "title": "exploring machine learning",
+    "author": "jane smith",
+    "author_img": "https://www.shutterstock.com/image-photo/profile-picture-smiling-successful-young-260nw-2040223583.jpg",
+    "posted_date": "2024-03-10",
+    "reading_time": 15,
+    "hashtags": ["machinelearning", "datascience"]
+  },
+  {
+    "id": 3,
+    "cover": "https://i.ibb.co/dmpWBgc/7797487-3761908.jpg",
+    "title": "the power of storytelling",
+    "author": "alexander brown",
+    "author_img": "https://media.istockphoto.com/id/1300512215/photo/headshot-portrait-of-smiling-ethnic-businessman-in-office.webp?b=1&s=170667a&w=0&k=20&c=TXCiY7rYEvIBd6ibj2bE-VbJu0rRGy3MlHwxt2LHt9w=",
+    "posted_date": "2024-03-08",
+    "reading_time": 12,
+    "hashtags": ["storytelling", "narrative"]
+  },
+  {
+    "id": 4,
+    "cover": "https://i.ibb.co/C7kxx0Q/12587259-252-Fashion-sale-facebook-cover-page-template.jpg",
+    "title": "web design essentials",
+    "author": "emily jones",
+    "author_img": "https://www.shutterstock.com/image-photo/profile-picture-smiling-young-african-260nw-1873784920.jpg",
+    "posted_date": "2024-03-05",
+    "reading_time": 8,
+    "hashtags": ["webdesign", "frontend"]
+  }
+]

@@ -1,4 +1,5 @@
 
+import AllData from './Component/AllData/AllData'
 import './App.css'
 
 function App() {
@@ -7,7 +8,7 @@ function App() {
   return (
     <>
       
-      
+      <AllData/>
       
     </>
   )
