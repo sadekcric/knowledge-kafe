@@ -3,6 +3,7 @@ import { useState } from "react";
 import BlogCard from "../BlogCard/BlogCard";
 
 
+
 const AllData = () => {
 
 
@@ -20,12 +21,13 @@ const AllData = () => {
 
 
   return (
-    <div>
-      <h1 className="text-6xl font-bold">Knowledge Cafe</h1>
+
+    <div className="md:w-3/4">
       {
         blogs.map((blog,index)=><BlogCard key={index} blog={blog}/>)
       }
     </div>
+    
   );
 };
 
