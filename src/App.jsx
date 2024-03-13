@@ -26,10 +26,11 @@ function App() {
   }
 
 
-  const handleClickInTimeSpend = (time) =>{
+  const handleClickInTimeSpend = (id, time) =>{
     
     setTimeSpend(timeSpend + time)
-    
+    const remainingItem = items.filter(item=>item.id !== id);
+    setItems(remainingItem)
   }
   
 

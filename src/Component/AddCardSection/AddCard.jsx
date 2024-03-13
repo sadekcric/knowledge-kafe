@@ -18,7 +18,7 @@ const AddCard = ({items, timeSpend}) => {
 
           <div>
             {
-                items.map(item=><AddCartChild key={item.id} item={item} />)
+                items.map((item,idx)=><AddCartChild key={idx} item={item} />)
             }
           </div>
         </div>

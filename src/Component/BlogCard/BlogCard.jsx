@@ -6,7 +6,7 @@ import { FaBookmark } from "react-icons/fa"
 const BlogCard = ({blog, handleClickAddCart, isActive, handleClickInTimeSpend}) => {
 
   // console.log(blog);
-  const {author, author_img, cover, hashtags, posted_date, reading_time, title}=blog;
+  const {author, author_img, cover, hashtags, posted_date, reading_time, title, id}=blog;
 
   
   
@@ -54,7 +54,7 @@ const BlogCard = ({blog, handleClickAddCart, isActive, handleClickInTimeSpend}) 
           }
         </div>
 
-        <p className='text-purple-800 '><button className='underline decoration-solid' onClick={()=>handleClickInTimeSpend(reading_time)}>Mark as read</button></p>
+        <p className='text-purple-800 '><button className='underline decoration-solid' onClick={()=>handleClickInTimeSpend(id, reading_time)}>Mark as read</button></p>
 
       </div>
 
