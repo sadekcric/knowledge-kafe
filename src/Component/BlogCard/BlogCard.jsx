@@ -1,11 +1,15 @@
 import PropTypes from 'prop-types';
 import { CiBookmark } from "react-icons/ci";
+import { FaBookmark } from "react-icons/fa"
 
 
-const BlogCard = ({blog, handleClickAddCart}) => {
+const BlogCard = ({blog, handleClickAddCart, isActive, handleClickInTimeSpend}) => {
 
   // console.log(blog);
   const {author, author_img, cover, hashtags, posted_date, reading_time, title}=blog;
+
+  
+  
 
   return (
     <div className='mb-24 border border-slate-100 shadow-xl'>
@@ -33,15 +37,16 @@ const BlogCard = ({blog, handleClickAddCart}) => {
         <div>
         <div className='flex items-center gap-5'>
           <p>{reading_time} min read</p>
-          <button onClick={()=>handleClickAddCart(blog)} className='text-2xl'><CiBookmark /></button>
+          <button onClick={()=>handleClickAddCart(blog)} 
+          className='text-2xl'>{isActive?  <FaBookmark /> : <CiBookmark /> }</button>
         </div>
         </div>
         
       </div>
 
 
-      <div className='p-4'>
-        <h1 className='text-7xl'>{title}</h1>
+      <div className='px-4'>
+        <h1 className='text-4xl lg:text-5xl '>{title}</h1>
 
         <div className='my-3'>
           {
@@ -49,7 +54,7 @@ const BlogCard = ({blog, handleClickAddCart}) => {
           }
         </div>
 
-        <p><a href="">Mark as read</a></p>
+        <p className='text-purple-800 '><button className='underline decoration-solid' onClick={()=>handleClickInTimeSpend(reading_time)}>Mark as read</button></p>
 
       </div>
 
@@ -62,7 +67,9 @@ const BlogCard = ({blog, handleClickAddCart}) => {
 
 BlogCard.propTypes={
   blog:PropTypes.object.isRequired,
-  handleClickAddCart:PropTypes.func.isRequired
+  handleClickAddCart:PropTypes.func.isRequired,
+  isActive:PropTypes.bool,
+  handleClickInTimeSpend:PropTypes.func
 }
 
 export default BlogCard;

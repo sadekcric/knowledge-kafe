@@ -8,24 +8,39 @@ import { useState } from 'react'
 function App() {
 
   const [items, setItems]=useState([]);
+  const [isActive, setIsActive]=useState(false);
+  const [timeSpend, setTimeSpend]=useState(0);
+
+
+
+  const isActiveTrue=()=>{
+    setIsActive(!isActive)
+  }
+
 
 
   const handleClickAddCart=(blog)=>{
     const newItem=[...items, blog];
     setItems(newItem)
+    isActiveTrue()
   }
 
-  console.log(items);
+
+  const handleClickInTimeSpend = (time) =>{
+    
+    setTimeSpend(timeSpend + time)
+    
+  }
   
 
   return (
     <>
-        <Nav/>
+      <Nav/>
 
 
-      <div className='flex mt-10 md:w-4/5 mx-auto gap-5'>
-        <AllData handleClickAddCart={handleClickAddCart}/>
-        <AddCard/>
+      <div className='flex flex-col md:flex-row mt-10 md:w-4/5 mx-auto gap-5'>
+        <AllData handleClickAddCart={handleClickAddCart} isActive={isActive} handleClickInTimeSpend={handleClickInTimeSpend} />
+        <AddCard items={items} timeSpend={timeSpend} />
       </div>
       
     </>
