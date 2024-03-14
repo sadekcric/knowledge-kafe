@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 
 
 
-const AllData = ({handleClickAddCart, isActive, handleClickInTimeSpend}) => {
+const AllData = ({handleClickAddCart, handleClickInTimeSpend}) => {
 
 
   const [blogs, setBlogs]=useState([]);
@@ -25,7 +25,7 @@ const AllData = ({handleClickAddCart, isActive, handleClickInTimeSpend}) => {
 
     <div className="md:w-2/3">
       {
-        blogs.map((blog,index)=><BlogCard key={index} blog={blog} handleClickAddCart={handleClickAddCart} isActive={isActive} handleClickInTimeSpend={handleClickInTimeSpend}/>)
+        blogs.map((blog,index)=><BlogCard key={index} blog={blog} handleClickAddCart={handleClickAddCart} handleClickInTimeSpend={handleClickInTimeSpend}/>)
       }
     </div>
     

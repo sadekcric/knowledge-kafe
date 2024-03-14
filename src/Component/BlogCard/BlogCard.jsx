@@ -1,16 +1,38 @@
 import PropTypes from 'prop-types';
 import { CiBookmark } from "react-icons/ci";
 import { FaBookmark } from "react-icons/fa"
+import { useState } from 'react';
 
 
-const BlogCard = ({blog, handleClickAddCart, isActive, handleClickInTimeSpend}) => {
+const BlogCard = ({blog, handleClickAddCart, handleClickInTimeSpend}) => {
 
   // console.log(blog);
   const {author, author_img, cover, hashtags, posted_date, reading_time, title, id}=blog;
 
+  const [isActive, setIsActive]=useState(false);
   
   
 
+  const btnClick =()=>{
+      if(!isActive){
+        setIsActive(!isActive)
+      }
+    
+    // 
+    handleClickAddCart(blog)
+  }
+
+
+
+  const markAsReadBtn = () =>{
+    handleClickInTimeSpend(id, reading_time);
+    if(isActive){
+      setIsActive(!isActive)
+    }
+
+  }
+  
+  
   return (
     <div className='mb-24 border border-slate-100 shadow-xl'>
       <div>
@@ -37,7 +59,7 @@ const BlogCard = ({blog, handleClickAddCart, isActive, handleClickInTimeSpend}) 
         <div>
         <div className='flex items-center gap-5'>
           <p>{reading_time} min read</p>
-          <button onClick={()=>handleClickAddCart(blog)} 
+          <button onClick={btnClick} 
           className='text-2xl'>{isActive?  <FaBookmark /> : <CiBookmark /> }</button>
         </div>
         </div>
@@ -54,7 +76,7 @@ const BlogCard = ({blog, handleClickAddCart, isActive, handleClickInTimeSpend}) 
           }
         </div>
 
-        <p className='text-purple-800 '><button className='underline decoration-solid' onClick={()=>handleClickInTimeSpend(id, reading_time)}>Mark as read</button></p>
+        <p className='text-purple-800 '><button className='underline decoration-solid' onClick={markAsReadBtn}>Mark as read</button></p>
 
       </div>
 
@@ -73,3 +95,5 @@ BlogCard.propTypes={
 }
 
 export default BlogCard;
+
+
